@@ -6,6 +6,7 @@ admin = 1027338863
 admin_group = -1001215418826
 ssilka = "https://t.me/joinchat/AAAAAEhx0cpogckCJK3zHw"
 token = "905874416:AAFbw2-jX_DGg-IFBKhcH3KqQGdznumtgh8"
+ssilka2 = "http://t.me/tanishuv_uz_bot"
 
 
 bot = telebot.TeleBot(token)
@@ -404,7 +405,7 @@ def callback_inline(call):
                 test = cursor.fetchall()
                 if test == []:
                     bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
-                                              text="Чтобы бот смог выслать вам контакты, подпишитесь на него! Он в закрепе.")
+                                              text="Чтобы получить номер, запусти бота.")
                 else:
                     try:
                         conn3 = sqlite3.connect("post.db")
@@ -559,7 +560,9 @@ def callback_inline(call):
                     photot = result[0][1]
                 markup3 = types.InlineKeyboardMarkup(row_width=1)
                 show = types.InlineKeyboardButton("Показать контакты 👀", callback_data="show")
+                sbot = types.InlineKeyboardButton("Запустить бота ⚙", callback_data="sbot", url=ssilka2)
                 markup3.add(show)
+                markup3.add(sbot)
                 if result[0][1] != "Пустая (Не поставлена)":
                     picture = bot.download_file(result[0][1])
                     bot.edit_message_caption(chat_id=admin, message_id=result2[0][1],
