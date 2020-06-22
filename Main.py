@@ -420,7 +420,7 @@ def callback_inline(call):
                         bot.send_message(chat_id=call.from_user.id, text="*Вот контакты выбранного пользователя*:\n\n_" + str(test3[0][8])+ "_", parse_mode="Markdown")
                     except:
                         bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
-                                                  text="Ошибка. Попробуй перезапустить бота.")
+                                                  text="Ведутся тех. работы. Бот пока что не работает.")
             else:
                 bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
                                           text="Для начала подпишитесь на этот канал!")
