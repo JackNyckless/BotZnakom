@@ -393,7 +393,7 @@ def callback_inline(call):
             conn10 = sqlite3.connect("last.db")
             cursor10 = conn10.cursor()
             sql10 = "SELECT * FROM albums WHERE id=?"
-            cursor10.execute(sql10, [(call.message.chat.id)])
+            cursor10.execute(sql10, [(call.from_user.id)])
             now_id = cursor10.fetchall()[0][1]
             conn10.close()
         except:
