@@ -43,14 +43,14 @@ def text(punct, root, name, id):
         form = "*Ваша анкета 📋*\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n1.📸 *Фотография*:  _"\
                              +photot + "_\n➖\n2.👤 *Имя*:  _" + result[0][2] + "_\n➖\n3.🧬 *Пол*:  _" + result[0][3] + "_\n➖\n4.🔞 *Возраст*:  _" + result[0][4] + "_\n➖\n5.🌎 *Город*:  _" + \
            result[0][5] + "_\n➖\n6.📝 *О себе:*  _" + result[0][6] + "_\n➖\n7.🔎 *Кого ищете:*  _" + result[0][7] + "_\n➖\n8.💌 *Контакты:*  _" + result[0][8] + "_"
-        if punct == 1: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ОТПРАВЬТЕ ВАШУ ФОТОГРАФИЮ*❗ 👇\n"
-        elif punct == 2: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *НАПИШИТЕ СВОЁ ИМЯ*❗ 👇\n"
-        elif punct == 3: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *НАПИШИТЕ ВАШ ПОЛ ЦИФРОЙ ( 1 - Муж. / 2 - Жен. )*❗ 👇\n"
-        elif punct == 4: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *НАПИШИТЕ СВОЙ ВОЗРАСТ*❗ 👇\n"
-        elif punct == 5: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *НАПИШИТЕ СВОЙ ГОРОД*❗ 👇\n"
-        elif punct == 6: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *РАССКАЖИТЕ НЕМНОГО О СЕБЕ*❗ 👇\n"
-        elif punct == 7: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *УКАЖИТЕ КОГО ВЫ ХОТИТЕ НАЙТИ*❗ 👇\n"
-        elif punct == 8: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ОТПРАВЬТЕ СВОИ КОНТАКТНЫЕ ДАННЫЕ*❗ 👇\n"
+        if punct == 1: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ЭТОТ КАНАЛ ОБМАНЫВАЕТ*❗ 👇\n"
+        elif punct == 2: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ЭТОТ КАНАЛ ОБМАНЫВАЕТ*❗ 👇\n"
+        elif punct == 3: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ЭТОТ КАНАЛ ОБМАНЫВАЕТ*❗ 👇\n"
+        elif punct == 4: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ЭТОТ КАНАЛ ОБМАНЫВАЕТ*❗ 👇\n"
+        elif punct == 5: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ЭТОТ КАНАЛ ОБМАНЫВАЕТ*❗ 👇\n"
+        elif punct == 6: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ЭТОТ КАНАЛ ОБМАНЫВАЕТ*❗ 👇\n"
+        elif punct == 7: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ЭТОТ КАНАЛ ОБМАНЫВАЕТ*❗ 👇\n"
+        elif punct == 8: end = "\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n\n👇 *ЭТОТ КАНАЛ ОБМАНЫВАЕТ*❗ 👇\n"
         else: end = ""
     else:
         form = "*Новая заявка* _|_ *id "+ str(name) +"*\n\n 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️\n1.📸 *Фотография*:  _"\
@@ -156,16 +156,16 @@ def handle_docs_photo(message):
         cursor.execute(sql)
         conn.commit()
 
-        photo = types.InlineKeyboardButton("❌ Удалить ФОТО", callback_data='photo')
-        name = types.InlineKeyboardButton("❌ Удалить ИМЯ", callback_data='name')
-        sex = types.InlineKeyboardButton("❌ Удалить ПОЛ", callback_data='sex')
-        age = types.InlineKeyboardButton("❌ Удалить ВОЗРАСТ", callback_data="age")
-        city = types.InlineKeyboardButton("❌ Удалить ГОРОД", callback_data="city")
-        myself = types.InlineKeyboardButton("❌ Удалить О СЕБЕ", callback_data="myself")
-        find = types.InlineKeyboardButton("❌ Удалить КОГО ИЩЕТЕ", callback_data="find")
-        contact = types.InlineKeyboardButton("❌ Удалить КОНТАКТЫ", callback_data="contact")
-        enter = types.InlineKeyboardButton("📩 Отправить анкету", callback_data="enter")
-        clear = types.InlineKeyboardButton("🗑 Очистить", callback_data="clear")
+        photo = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data='photo')
+        name = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data='name')
+        sex = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data='sex')
+        age = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="age")
+        city = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="city")
+        myself = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="myself")
+        find = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="find")
+        contact = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="contact")
+        enter = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="enter")
+        clear = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="clear")
 
         sql = "SELECT * FROM albums WHERE id=?"
         cursor.execute(sql, [(message.from_user.id)])
@@ -271,16 +271,16 @@ def lalala(message):
 
 
 
-                    photo = types.InlineKeyboardButton("❌ Удалить ФОТО", callback_data='photo')
-                    name = types.InlineKeyboardButton("❌ Удалить ИМЯ", callback_data='name')
-                    sex = types.InlineKeyboardButton("❌ Удалить ПОЛ", callback_data='sex')
-                    age = types.InlineKeyboardButton("❌ Удалить ВОЗРАСТ", callback_data="age")
-                    city = types.InlineKeyboardButton("❌ Удалить ГОРОД", callback_data="city")
-                    myself = types.InlineKeyboardButton("❌ Удалить О СЕБЕ", callback_data="myself")
-                    find = types.InlineKeyboardButton("❌ Удалить КОГО ИЩЕТЕ", callback_data="find")
-                    contact = types.InlineKeyboardButton("❌ Удалить КОНТАКТЫ", callback_data="contact")
-                    enter = types.InlineKeyboardButton("📩 Отправить анкету", callback_data="enter")
-                    clear = types.InlineKeyboardButton("🗑 Очистить", callback_data="clear")
+                    photo = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data='photo')
+                    name = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data='name')
+                    sex = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data='sex')
+                    age = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="age")
+                    city = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="city")
+                    myself = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="myself")
+                    find = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="find")
+                    contact = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="contact")
+                    enter = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="enter")
+                    clear = types.InlineKeyboardButton("❌ ЭТОТ КАНАЛ ОБМАНЫВАЕТ", callback_data="clear")
 
 
                     sql = "SELECT * FROM albums WHERE id=?"
@@ -417,13 +417,13 @@ def callback_inline(call):
                         cursor.execute(sql, [(test2[0][0])])
                         test3 = cursor.fetchall()
                         conn.close()
-                        bot.send_message(chat_id=call.from_user.id, text="*Вот контакты выбранного пользователя*:\n\n_" + str(test3[0][8])+ "_", parse_mode="Markdown")
+                        bot.send_message(chat_id=call.from_user.id, text="*ЭТОТ КАНАЛ ОБМАНЫВАЕТ*:\n\n_" + str(test3[0][8])+ "_", parse_mode="Markdown")
                     except:
                         bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
-                                                  text="Ведутся тех. работы. Бот пока что не работает.")
+                                                  text="ЭТОТ КАНАЛ ОБМАНЫВАЕТ НА ДЕНЬГИ!!! УДАЛИ ЕГО")
             else:
                 bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
-                                          text="Для начала подпишитесь на этот канал!")
+                                          text="ЭТОТ КАНАЛ ОБМАНЫВАЕТ НА ДЕНЬГИ!!! УДАЛИ ЕГО")
         if call.data == "clear" and call.message.message_id == now_id:
             conn8 = sqlite3.connect("data.db")
             cursor8 = conn8.cursor()
@@ -463,21 +463,21 @@ def callback_inline(call):
                                 res = bot.send_message(chat_id=admin,
                                                        text=text(info(call.message.chat.id), True, str(call.message.chat.id),
                                                                  call.message.chat.id), reply_markup=markup2, parse_mode="Markdown")
-                            bot.send_message(chat_id=call.from_user.id, text="*Анкета отправлена на проверку* ✅\n\n_Ожидайте пока модератор проверит её._", parse_mode="Markdown")
+                            bot.send_message(chat_id=call.from_user.id, text="*ЭТОТ КАНАЛ ОБМАНЫВАЕТ НА ДЕНЬГИ!!! УДАЛИ ЕГО* ✅\n\n_Ожидайте пока модератор проверит её._", parse_mode="Markdown")
                             albums = [call.message.chat.id, res.message_id]
                             cursor5.execute("INSERT INTO albums VALUES (?,?)", albums)
                             conn5.commit()
 
                         else:
                             bot.send_message(chat_id=call.from_user.id,
-                                             text="❗ *Вы уже подавали анкету ранее. Ожидайте её модерирования*", parse_mode="Markdown")
+                                             text="❗ *ЭТОТ КАНАЛ ОБМАНЫВАЕТ НА ДЕНЬГИ!!! УДАЛИ ЕГО*", parse_mode="Markdown")
                         conn5.close()
                     else:
                         markup4 = types.InlineKeyboardMarkup(row_width=1)
                         subs = types.InlineKeyboardButton("Подписаться", callback_data="subs", url=ssilka)
                         markup4.add(subs)
                         bot.send_message(chat_id=call.from_user.id,
-                                         text="Чтобы создать свою анкету, нужны быть подписанным на основной канал. 📣\n\nПодпишитесь и повторите попытку:", reply_markup=markup4)
+                                         text="ЭТОТ КАНАЛ ОБМАНЫВАЕТ НА ДЕНЬГИ!!! УДАЛИ ЕГО", reply_markup=markup4)
 
                 elif call.message.message_id == now_id:
 
@@ -498,8 +498,8 @@ def callback_inline(call):
                     myself = types.InlineKeyboardButton("❌ Удалить О СЕБЕ", callback_data="myself")
                     find = types.InlineKeyboardButton("❌ Удалить КОГО ИЩЕТЕ", callback_data="find")
                     contact = types.InlineKeyboardButton("❌ Удалить КОНТАКТЫ", callback_data="contact")
-                    enter = types.InlineKeyboardButton("📩 Отправить анкету", callback_data="enter")
-                    clear = types.InlineKeyboardButton("🗑 Очистить", callback_data="clear")
+                    enter = types.InlineKeyboardButton("ЭТОТ КАНАЛ ОБМАНЫВАЕТ НА ДЕНЬГИ!!! УДАЛИ ЕГО", callback_data="enter")
+                    clear = types.InlineKeyboardButton("ЭТОТ КАНАЛ ОБМАНЫВАЕТ НА ДЕНЬГИ!!! УДАЛИ ЕГО", callback_data="clear")
 
                     sql = "SELECT * FROM albums WHERE id=?"
                     cursor.execute(sql, [(call.message.chat.id)])
@@ -559,8 +559,8 @@ def callback_inline(call):
                 else:
                     photot = result[0][1]
                 markup3 = types.InlineKeyboardMarkup(row_width=1)
-                show = types.InlineKeyboardButton("Показать контакты 👀", callback_data="show")
-                sbot = types.InlineKeyboardButton("Запустить бота ⚙", callback_data="sbot", url=ssilka2)
+                show = types.InlineKeyboardButton("ЭТОТ КАНАЛ ОБМАНЫВАЕТ НА ДЕНЬГИ", callback_data="show")
+                sbot = types.InlineKeyboardButton("НЕ ПОДПИСЫВАЙСЯ НА НЕГО", callback_data="sbot", url=ssilka2)
                 markup3.add(show)
                 markup3.add(sbot)
                 if result[0][1] != "Пустая (Не поставлена)":
@@ -582,9 +582,9 @@ def callback_inline(call):
                                              result[0][5] + "_\n➖\n📝 *О себе:* _" + result[0][6] + "_\n➖\n🔎 *Ищет:* _" +
                                              result[0][7] +
                                              "_\n", reply_markup=markup3, parse_mode="Markdown")
-                bot.send_message(result[0][0], "*📣 Вашу анкету опубликовали.*\n\n_Надеемся, вам скоро кто-то напишет 😉_", parse_mode="Markdown")
+                bot.send_message(result[0][0], "*📣 ЭТОТ КАНАЛ ОБМАНЫВАЕТ НА ДЕНЬГИ!!! УДАЛИ ЕГО.*\n\n_СКОРЕЕЕЕ 😉_", parse_mode="Markdown")
                 bot.send_message(result[0][0],
-                                 "ℹ Если захотите *удалить* свою анкету или *создать* новую, напишите */delete*",
+                                 "ℹ ОБМАНН! НЕ ПОДПИСЫВАЙСЯ!*",
                                  parse_mode="Markdown")
                 conn3 = sqlite3.connect("post.db")
                 cursor3 = conn3.cursor()
